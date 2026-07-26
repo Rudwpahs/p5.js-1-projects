@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>p5.js Motion Sketchbook</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js" defer></script>
+    <script src="gallery.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="./">p5<span>/</span>SKETCHBOOK</a>
+        <p>Three small studies in motion, rhythm, and interaction.</p>
+      </header>
+      <section class="intro">
+        <p class="eyebrow">CREATIVE CODING / 2023</p>
+        <h1>Make a mark.<br /><em>Let it move.</em></h1>
+        <p class="lede">A tiny, runnable gallery for the original p5.js experiments. Pick a study, change the parameters, and see the idea breathe in real time.</p>
+      </section>
+      <section class="workspace" aria-label="Sketch gallery">
+        <aside class="controls">
+          <p class="label">SKETCHES</p>
+          <button class="sketch-button active" data-sketch="crossing"><span>01</span><strong>Crossing Lines</strong><small>Frame-rate geometry</small></button>
+          <button class="sketch-button" data-sketch="orbit"><span>02</span><strong>Orbiting Dots</strong><small>Layered sine motion</small></button>
+          <button class="sketch-button" data-sketch="door"><span>03</span><strong>Open / Close</strong><small>Click to interact</small></button>
+          <div class="tips"><span>TIP</span><p>Try the arrow keys or click the canvas when a sketch supports interaction.</p></div>
+        </aside>
+        <div class="canvas-wrap">
+          <div id="canvas-host" aria-live="polite"></div>
+          <div class="canvas-footer"><span id="sketch-name">CROSSING LINES</span><span id="sketch-status">RUNNING</span></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
