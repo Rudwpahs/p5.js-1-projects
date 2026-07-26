@@ -1,0 +1,1 @@
+The gallery entry point is `index.html`. Source files remain independent sketches for easy study and remixing.
