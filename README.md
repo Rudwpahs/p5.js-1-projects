@@ -1,47 +1,56 @@
-# p5.js Motion Sketchbook
+<div align="center">
 
-p5.js를 처음 익힐 때 만든 움직임 실험들을 한곳에서 다시 볼 수 있게 정리한 작은 갤러리입니다. 각각 따로 놀던 스케치를 브라우저에서 바로 바꿔가며 볼 수 있게 묶었습니다.
+# 🎨 p5.js Motion Sketchbook
 
-이 저장소는 새 기능을 계속 붙이는 제품이라기보다, **처음 creative coding을 익히면서 어떤 방식으로 움직임을 만들었는지 남겨두는 학습 기록**입니다.
+### Small motion experiments from my first creative-coding studies.
 
-## 들어 있는 스케치
+<p>
+  <img alt="p5.js" src="https://img.shields.io/badge/p5.js-creative_coding-ED225D?logo=p5dotjs&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000">
+  <img alt="Archive" src="https://img.shields.io/badge/status-learning_archive-8b949e">
+</p>
 
-- **Crossing Lines** — 프레임마다 좌표를 바꾸며 세 개의 선이 교차하는 움직임
-- **Orbiting Dots** — `sin` 기반 주기 운동과 점의 순차 생성
-- **Open / Close** — 클릭에 따라 문이 열리고 닫히는 상태 전환 실험
+[Sketches](#sketches) · [Loop](#the-loop) · [Run](#run)
 
-## 기본 동작 알고리즘
+</div>
 
-세 스케치 모두 p5.js의 같은 기본 루프를 사용합니다.
+---
 
-```text
-setup()에서 캔버스와 초기 상태 준비
-        ↓
-draw()가 프레임마다 반복 실행
-        ↓
-현재 시간 / 프레임 / 사용자 입력으로 좌표 계산
-        ↓
-계산한 좌표로 선·점·도형 다시 그림
-        ↓
-다음 프레임에서 상태 갱신
+p5.js를 처음 익힐 때 만든 움직임 실험들을 한곳에서 다시 볼 수 있게 정리한 작은 gallery입니다. **새 기능을 계속 붙이는 제품이 아니라 creative coding을 배우던 과정의 기록**입니다.
+
+## Sketches
+
+| Sketch | What I was testing |
+|---|---|
+| **Crossing Lines** | frame마다 좌표를 바꾸는 line motion |
+| **Orbiting Dots** | `sin` 기반 주기 운동과 순차 생성 |
+| **Open / Close** | click으로 상태를 바꾸는 interaction |
+
+## The loop
+
+```mermaid
+flowchart LR
+    A[setup()] --> B[Initial canvas / state]
+    B --> C[draw() every frame]
+    C --> D[Read time / frame / input]
+    D --> E[Calculate coordinates]
+    E --> F[Draw shapes]
+    F --> G[Update state]
+    G --> C
 ```
 
-`Open / Close`처럼 입력이 필요한 스케치는 마우스 클릭으로 상태값을 바꾸고, 다음 `draw()`부터 그 상태에 맞는 모양을 그립니다. `Orbiting Dots`는 삼각함수 값을 좌표에 넣어 반복적인 궤도를 만듭니다.
+`Open / Close`는 클릭으로 상태값을 바꾸고 다음 `draw()`부터 그 상태에 맞는 모양을 그립니다. `Orbiting Dots`는 삼각함수를 좌표에 넣어 반복적인 궤도를 만듭니다.
 
-## 실행
+## Run
 
-`index.html`을 브라우저에서 열면 됩니다. 정적 서버로 보고 싶다면:
+`index.html`을 브라우저에서 열거나:
 
 ```bash
 python -m http.server 8000
 ```
 
-## 기술
+## Stack
 
-- p5.js
-- JavaScript
-- HTML
+`p5.js` · JavaScript · HTML
 
-## 상태
-
-현재는 **learning archive**로 두는 게 맞습니다. 코드를 지우거나 다른 프로젝트와 합치기보다, 당시 p5.js를 익히던 과정을 그대로 남겨두는 용도로 유지합니다.
+> **Learning archive** — 당시 p5.js를 익히던 구조와 시행착오를 그대로 알아볼 수 있게 보존합니다.
