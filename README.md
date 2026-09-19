@@ -1,13 +1,41 @@
 # p5.js Motion Sketchbook
 
-An executable gallery for the original three p5.js studies in this repository.
+p5.js를 처음 익힐 때 만든 움직임 실험들을 한곳에서 다시 볼 수 있게 정리한 작은 갤러리입니다. 각각 따로 놀던 스케치를 브라우저에서 바로 바꿔가며 볼 수 있게 묶었습니다.
 
-## Run it
+## 들어 있는 스케치
 
-Open `index.html` in a browser, or serve the folder with any static server. The page loads p5.js from jsDelivr and lets you switch between the three sketches without editing source files.
+- **Crossing Lines** — 프레임마다 좌표를 바꾸며 세 개의 선이 교차하는 움직임
+- **Orbiting Dots** — `sin` 기반 주기 운동과 점의 순차 생성
+- **Open / Close** — 클릭에 따라 문이 열리고 닫히는 상태 전환 실험
 
-## Studies
+## 기본 동작 알고리즘
 
-- **Crossing Lines** — frame-rate geometry with three color paths.
-- **Orbiting Dots** — layered sine motion and progressive spawning.
-- **Open / Close** — an interactive door study; click the canvas to change state.
+세 스케치 모두 p5.js의 같은 기본 루프를 사용합니다.
+
+```text
+setup()에서 캔버스와 초기 상태 준비
+        ↓
+draw()가 프레임마다 반복 실행
+        ↓
+현재 시간 / 프레임 / 사용자 입력으로 좌표 계산
+        ↓
+계산한 좌표로 선·점·도형 다시 그림
+        ↓
+다음 프레임에서 상태 갱신
+```
+
+`Open / Close`처럼 입력이 필요한 스케치는 마우스 클릭으로 상태값을 바꾸고, 다음 `draw()`부터 그 상태에 맞는 모양을 그립니다. `Orbiting Dots`는 삼각함수 값을 좌표에 넣어 반복적인 궤도를 만듭니다.
+
+## 실행
+
+`index.html`을 브라우저에서 열면 됩니다. 정적 서버로 보고 싶다면:
+
+```bash
+python -m http.server 8000
+```
+
+## 기술
+
+- p5.js
+- JavaScript
+- HTML
